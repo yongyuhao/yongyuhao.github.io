@@ -8,7 +8,7 @@
       <p><b>地址：南京市玄武区孝陵卫200号南京理工大学，思源楼，邮编：210014</b></p>
     </td>
     <td width="25%">
-      <img src="/yongyuhao.jpg" width="100%">      % 插入证件照代码
+      <img src="/yongyuhao.jpg" width="100%">      
     </td>
   </tr>
 </table>
