@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>测试</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        .top-container{
+            background: #f3f3f3;;
+            height:30px;
+            min-width: 1500px;
+            border: 1px solid #e8e8e8;
+            color: #747d87;
+            margin: 0;
+            z-index:2;
+			display: flex;
+			justify-content: center;
+        }
+ 
+
+        .top-left-nav,.user-nav{
+            display: inline-block;
+            border: 1px solid red;
+            height: 30px;
+        }
+
+        .nav{
+            display: inline-block;
+            margin:0 auto;
+            padding:0;
+            position: relative;
+			
+        }
+
+        .nav:after{
+            content:"";
+            display:block;
+            clear:both;
+            visibility: hidden;
+            width:0px;
+            height:0px;
+        }
+
+        .nav ul ,.nav li{
+            display: block;
+            position: relative;
+            margin:0px;
+            padding:0px;
+        }
+
+        .nav a{
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin:0 auto;
+        }
+
+        .first-nav{
+                float: left;
+                text-align:center;
+                display: block;
+                margin:0 auto;
+        }
+
+        .sec-nav{
+                position: relative;
+                display: none;
+                text-align:center;
+				line-height: 20px;
+				background: #373636;
+				
+        }
+        .top-left-nav .first-nav{
+          /*显示具体布局*/
+            width:130px;
+			
+        }
+        .top-left-nav  .sec-nav{
+            margin:0px;
+            display: none;
+           
+            width: 150px;
+        }
+		.third-nav{
+			display: none;
+		}
+        .top-left-nav .first-nav:hover .sec-nav{
+            display: block;    
+        }
+		.top-left-nav .first-nav:hover .third-nav{
+			display:none;
+		}
+		.top-left-nav .sec-nav li:hover .third-nav{
+			display: block;
+			position: absolute;
+		}
+		.top-left-nav .first-nav:hover{
+       		background-color: #111;
+        }
+		.top-left-nav .sec-nav li:hover{
+       		background-color: #111;
+        }
+		.dropdown.first-nav{
+			background-color: #333;
+			color: white;
+			font-size: 20px;
+			width: 150px;
+			line-height: 60px;
+			font-weight: 500;
+			
+		}
+		a{
+			color: aliceblue;
+			line-height: 30px;
+			
+			font-size: 17px;
+			font-weight: 550;
+		}
+		.third-nav{
+			font-size: 14px;
+			font-weight: 550;
+			width: 140px;
+			line-height: 25px;
+			color: white;
+			display: none;
+			left:150px;
+			top: 0;
+			background: #4E4E4E;
+		}
+    </style>
+  </head>
+  <body style="margin:0;">
+        <!--导航栏一般需要一个容器，设置width:100%适应浏览器的大小变化-->
+   <div  class="top-container container">
+     <!--导航栏wrapper一般设置一个固定大小这样子可以通过margin:auto;实现导航栏水平居中
+     由于顶层容器是适应浏览器变化宽度，所以可以保持水平导航栏自适应浏览器窗口宽度保持居中-->
+
+      <div class="nav top-left-nav">
+        <!--开始实现列表-->
+       <ul>
+		   <li class="dropdown first-nav"><span>学校概况<i class="icon icon-arrow"></i></span>
+			 <ul class="sec-nav">
+			  <li><a href="#">学校简介</a></li>
+			  <li><a href="#">学校章程</a></li>
+			  <li><a href="#">历史沿革</a></li>
+			  <li><a href="#">信息公开</a></li>
+			 </ul> 
+		   </li>
+		   <li class="dropdown first-nav"><span>学院设置<i class="icon icon-arrow"></i></span>
+			 <ul class="sec-nav">
+			  <li><a href="#">学院</a></li>
+			  <li><a href="#">其他</a></li>
+             </ul>
+			 </li>
+      </div>
+  </div>
+  </body>
+</html>
