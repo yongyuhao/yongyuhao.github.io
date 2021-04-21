@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易版备忘录</title>
+    <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="aide">
+        <button class="add">+</button>
+        <h2>备忘录</h2>
+        <hr>
+        <ul></ul>
+ 
+    </div>
+ 
+    <script type="text/javascript">
+        $(function(){
+            $(".add").on("click",function(){
+                /**
+                 * 备忘录内添加1条记录;
+                 */
+                $("ul").append("<li><textarea></textarea><button class='sub'>确定</button></li>");//点击添加按钮，在ul内添加一个多行输入文本框和一个按钮;
+                $("ul").on("click" ,"li .sub",function(){
+                    var text=$(this).parent().children("textarea").val();//获取多行输入文本框内的值;
+                    $(this).parent().html("<div></div>"+"<p>"+text+"</p>");//将获取到的输入内容转换为段落格式,同时在内容前添加一个单选圆圈;
+                })
+ 
+                /**
+                 * 修改点击的记录;
+                 */
+                $("ul").on("click","li p",function(){
+                    var textarea=$(this).parent().children("p").val();//获取段落标签内的值;
+                $(this).parent().html("<textarea>"+textarea+"</textarea><button class='sub'>确定</button>");//将获取到的段落标签内的值转换为标签文本，并同时添加一个确定按钮;
+                })
+                $("ul").on("click","li div",function(){
+                    if($(this).hasClass("on")){
+                        $(this).removeClass("on");//如果单击时单选被选中，则移除选中效果;
+                    }else{
+                        $(this).addClass("on");//否则添加选中效果;
+                    }                            
+                })
+            })     
+        })
+ 
+    </script>
+</body>
+</html>
